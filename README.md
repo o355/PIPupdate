@@ -25,16 +25,14 @@ It's easy. And it isn't a pain in the neck.
 * The updater will do it's thing. If you have lots of packages, grab a snack, it may take a while!
 * The speed of the updater will usually depend on your internet connection, more than your computer speed.
 
-# The Roadmap
-PIPupdate is in it's early stages, and there's still a lot left to do. Here's a roadmap of where I'd like PIPupdate to be in the future.
+# Known Issues/Features to Come
+PIPupdate is in it's early stages, and there's still a lot left to fix and add. Generally, here are some issues that need to get addressed, and features that should come.
 
-* 1.0 (Jan 2017) - Arguments for force reinstalling, and uninstalling.
-* 1.1 (Feb 2017) - Outputting progress information, warnings on high amounts of package updates (with an on/off script).
-* 1.2 (Mar 2017) - Outputting detailed information, like elapsed time, and estimated time left.
-* 1.3 (Apr 2017) - Bulk installing with specific revisions
-* And beyond...  - Adding a GUI, and lots of other fun stuff!
-
-Everything is spaced out, since I'm also maintaning dozens of projects and have school. I usually partition my time for projects, meaning I'll hit a milestone once a month for PIPupdate.
+* PIPupdater doesn't check pip list --outdated first, before updating packages.
+* PIPupdater obviously needs the force reinstall/uninstall everything arguments.
+* PIPupdater should warn users who are about to do an op with 100+ packages.
+* PIPupdater should have the equivalent of pip install -r requirements.txt, but users input packages/version numbers, then the updater compiles it into a file, and does the op on it's own.
+* Python 2 compatibility. Right now this is Python 3 or greater only.
 
 # Have a suggestion? See a bug? Want to make additions?
 Be sure to report suggestions and bugs with issues.
