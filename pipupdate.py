@@ -14,6 +14,7 @@ except ImportError:
 try:
     import pip
 except ImportError:
+    # And I realized that instead of a thrown error, maybe I'll install PIP for the user!
     print("Please install PIP to use PIPupdate!")
     sys.exit()
 try:
