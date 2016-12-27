@@ -18,7 +18,7 @@ PIPupdate is open-source, cross-platform, and doesn't require installing anythin
 # Setting up PIPupdate
 It's easy. And it isn't a pain in the neck.
 
-* Download the ZIP provided in the releases tab, and extract it.
+* Download the ZIP corresponding to the latest release (usually called pipupdate-versionnumber.zip), and extract it to a folder.
 * Linux Users: You can also run the command ```https://github.com/o355/pipupdate.git --depth=1``` to download/extract PIPupdate.
 * Open a terminal prompt in that location, and type in ```python pipupdate.py```
 * For Linux users, use ```python3 pipupdate.py```
