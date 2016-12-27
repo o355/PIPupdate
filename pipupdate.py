@@ -1,10 +1,12 @@
-#PIPupdate
-#(c) 2016 o355 under the GNU GPL 3.0
+# PIPupdate
+# (c) 2016 o355 under the GNU GPL 3.0
 
 print("Welcome to PIPupdate (v0.9)")
 print("Loading...")
+#Declaring number vars
 updatecountint = 0
 updatenumber = 0
+#Try/Except for proper handling of possible import errors
 try:
     import pip
 except ImportError:
@@ -12,9 +14,12 @@ except ImportError:
     sys.exit()
 import sys
 from subprocess import call
+#Here we find out how many packages we need to install
 for pkgname in pip.get_installed_distributions():
     updatenumber = updatenumber + 1
+#Run the int -> str conversion
 updatenumberstr = str(updatenumber)
+#Run the loop, gets the package name for each package.
 for pkgname in pip.get_installed_distributions():
     print("PIPupdate: Now attempting to update package " + pkgname.project_name)
     print("")
