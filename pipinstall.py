@@ -18,11 +18,18 @@ try:
 except ImportError:
     print("Please install shutil to use this script!")
     sys.exit()
+try:
+    import time
+except ImportError:
+    print("Please install time to use this script!")
+    sys.exit()
 print("Now downloading the PIP installer...")
 with urllib.request.urlopen('https://bootstrap.pypa.io/get-pip.py') as update_response, open('get-pip.py', 'wb') as update_out_file:
     shutil.copyfileobj(update_response, update_out_file)
 print("Now running the PIP installer...")
-print("Please note: get-pip.py is not developed or maintained by myself, and may exit without warning.")
-print("If this script ends, please relaunch pipupdate.py.")
+print("Please note: get-pip.py is not developed or maintained by myself.")
+print("Please note: This script will quit out of PIPupdate. Please relaunch PIPupdate when the script is quitted.")
+print("Starting in 2 seconds...")
+time.sleep(2)
 exec(open("get-pip.py").read())
 print("PIP install complete. Returning to PIPupdate!")

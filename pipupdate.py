@@ -33,22 +33,46 @@ try:
 except ImportError:
     print("Please install subprocess/subprocess call to use PIPupdate!")
     sys.exit()
+try:
+    from colorama import init, Fore, Style
+except ImportError:
+    print("Shucks. PIPupdate is dependent on Colorama to run. Would you like me to install Colorama for you?")
+    coloramainstall = input("Yes or No: ").lower()
+    if coloramainstall == "yes":
+        print("Alright. Installing Colorama now!")
+        pip.main(['install', 'colorama'])
+        try:
+            from colorama import init, Fore, Style
+            print("Installed Colorama!")
+        except ImportError:
+            print("Colorama wasn't installed...")
+            print("Please try running pip install colorama in a Python terminal.")
+            sys.exit()
+    elif coloramainstall == "no":
+        print("Alright. You can also run the pipupdate-nocolor.py script (coming 1.0.1) if you don't want to install Colorama.")
+        sys.exit()
+    else:
+        print("I couldn't understand what you inputted.")
+        print("I'll assume you didn't want to install Colorama. Exiting now!")
+        sys.exit()
+init()
 #Here we find out how many packages we need to install
 for pkgname in pip.get_installed_distributions():
     updatenumber = updatenumber + 1
 #Run the int -> str conversion for printing progress
 updatenumberstr = str(updatenumber)
-print("About to update " + updatenumberstr + " packages...")
 #Run the loop, and the updater does it's thing.
 for pkgname in pip.get_installed_distributions():
-    print("PIPupdate: Now attempting to update package " + pkgname.project_name)
-    print("")
+    print(Style.BRIGHT)
+    print(Fore.GREEN + "PIPupdate: Now attempting to update package " + pkgname.project_name)
+    print(Style.RESET_ALL + "")
     updatecountint = updatecountint + 1
     updatecountstr = str(updatecountint)
     call("pip install --upgrade " + pkgname.project_name, shell=True)
     print("")
-    print("PIPupdate: Updated package " + pkgname.project_name + " successfully (finished " + updatecountstr + "/" + updatenumberstr + " updates so far.)")
+    print(Style.BRIGHT)
+    print(Fore.GREEN + "PIPupdate: Updated package " + pkgname.project_name + " successfully (finished " + updatecountstr + "/" + updatenumberstr + " updates so far.)")
 
-print("")
+print(Style.RESET_ALL + "")
 print("PIPupdate is done, upgraded " + updatecountstr + " packages!")
 print("Thank you for using PIPupdate!")
