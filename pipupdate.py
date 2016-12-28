@@ -70,5 +70,5 @@ for pkgname in pip.get_installed_distributions():
     print(Fore.GREEN + Style.BRIGHT + "PIPupdate: Updated package " + pkgname.project_name + ". Progress: " + updatecountstr + "/" + updatenumberstr + " updates")
 
 print(Style.RESET_ALL)
-print("PIPupdate is done, upgraded " + updatecountstr + " packages!")
+print("PIPupdate is done, updated " + updatecountstr + " packages!")
 print("Thank you for using PIPupdate!")
