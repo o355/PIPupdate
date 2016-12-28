@@ -38,6 +38,7 @@ for pkgname in pip.get_installed_distributions():
     updatenumber = updatenumber + 1
 #Run the int -> str conversion for printing progress
 updatenumberstr = str(updatenumber)
+print("About to update " + updatenumberstr + " packages...")
 #Run the loop, and the updater does it's thing.
 for pkgname in pip.get_installed_distributions():
     print("PIPupdate: Now attempting to update package " + pkgname.project_name)
