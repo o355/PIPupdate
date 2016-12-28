@@ -67,7 +67,7 @@ for pkgname in pip.get_installed_distributions():
     updatecountint = updatecountint + 1
     updatecountstr = str(updatecountint)
     call("pip install --upgrade " + pkgname.project_name, shell=True)
-    print(Fore.GREEN + Style.BRIGHT + "PIPupdate: Updated package " + pkgname.project_name + " successfully (finished " + updatecountstr + "/" + updatenumberstr + " updates so far.)")
+    print(Fore.GREEN + Style.BRIGHT + "PIPupdate: Updated package " + pkgname.project_name + ". Progress: " + updatecountstr + "/" + updatenumberstr + " updates")
 
 print(Style.RESET_ALL)
 print("PIPupdate is done, upgraded " + updatecountstr + " packages!")
