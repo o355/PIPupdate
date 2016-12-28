@@ -28,7 +28,7 @@ It's easy. And it isn't a pain in the neck.
 # Known Issues/Features to Come
 PIPupdate is in it's early stages, and there's still a lot left to fix and add. Generally, here are some issues that need to get addressed, and features that should come.
 
-* PIPupdater doesn't check pip list --outdated first, before updating packages. (Starting to work on figuring this out)
+* ~~PIPupdater doesn't check pip list --outdated first, before updating packages.~~ As it turns out, doing this goes WAY beyond my understanding of Python. In the future? Yes. Right now? It's extremely hard to get a cross-platform solution to this.
 * PIPupdater obviously needs the force reinstall/uninstall everything arguments.
 * PIPupdater should warn users who are about to do an op with 100+ packages.
 * PIPupdater should have the equivalent of pip install -r requirements.txt, but users input packages/version numbers, then the updater compiles it into a file, and does the op on it's own.
