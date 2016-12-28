@@ -22,6 +22,7 @@ It's easy. And it isn't a pain in the neck.
 * Download the ZIP corresponding to the latest release (usually called pipupdate-versionnumber.zip), and extract it to a folder.
 * Linux Users: You can also run the command ```https://github.com/o355/pipupdate.git --depth=1``` to download/extract PIPupdate.
 * Open a terminal prompt in that location, and type in ```python pipupdate.py```
+* You could always double-click the file on Mac OS X/Windows, if you don't feel like opening terminal prompts.
 * For Linux users, use ```python3 pipupdate.py```
 * The updater will do it's thing. If you have lots of packages, grab a snack, it may take a while!
 * The speed of the updater will usually depend on your internet connection, more than your computer speed.
