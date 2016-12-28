@@ -1,7 +1,7 @@
-# PIPupdate 0.9.1
+# PIPupdate 1.0
 # (c) 2016 o355 under the GNU GPL 3.0
 
-print("Welcome to PIPupdate (v0.9.1)")
+print("Welcome to PIPupdate (v1.0)")
 print("Loading...")
 #Declaring number vars
 updatecountint = 0
@@ -14,9 +14,20 @@ except ImportError:
 try:
     import pip
 except ImportError:
-    # And I realized that instead of a thrown error, maybe I'll install PIP for the user!
-    print("Please install PIP to use PIPupdate!")
-    sys.exit()
+    # We ask for an input, and determine if the user wants PIP installed.
+    # To keep things organized, we launch an external script that installs PIP for them.
+    print("Shucks. PIP isn't installed. Would you like me to install PIP for you?")
+    pipinstall = input("Yes or No: ").lower()
+    if pipinstall == "yes":
+        print("Alright. Installing PIP now!")
+        exec(open("pipinstall.py").read())
+    elif pipinstall == "no":
+        print("Alright. Not installing PIP, exiting PIPupdate.")
+        sys.exit()
+    else:
+        print("I couldn't understand what you inputted.")
+        print("I'll assume you didn't want to install PIP, exiting now.")
+        sys.exit()
 try:
     from subprocess import call
 except ImportError:
@@ -25,9 +36,9 @@ except ImportError:
 #Here we find out how many packages we need to install
 for pkgname in pip.get_installed_distributions():
     updatenumber = updatenumber + 1
-#Run the int -> str conversion
+#Run the int -> str conversion for printing progress
 updatenumberstr = str(updatenumber)
-#Run the loop, gets the package name for each package.
+#Run the loop, and the updater does it's thing.
 for pkgname in pip.get_installed_distributions():
     print("PIPupdate: Now attempting to update package " + pkgname.project_name)
     print("")
