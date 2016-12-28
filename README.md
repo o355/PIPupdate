@@ -1,14 +1,14 @@
 # Welcome to PIPupdate!
-An easy-to-use PIP package manager. Update, force reinstall, and uninstall all packages in 1 command.
+An easy-to-use PIP package manager. Update, force reinstall, do an easy requirements.txt install, and uninstall all packages in 1 command.
 
 # Why PIPupdate?
 Updating all PIP packages can be confusing to a newcomer. I wanted PIPupdate to sort of emulate APT, but in a different way.
 
 Right now, there is no solution that kills all the problems we've had in one stone. Browsing through possible solutions on StackOverflow confused me, which script actually works, what works in Windows, which ones have me installing other things to do one thing.
 
-PIPupdate was my solution to the troubles the newcomers and myself have had. It's a small >4 KB script that can update, force reinstall, and uninstall packages easily, while outputting useful information, like progress, update duration, and the number of packages to update.
+PIPupdate was my solution to the troubles the newcomers and myself have had. It's a small >4 KB script that can update, force reinstall, easily do a requirements.txt install, and uninstall all packages. PIPupdate was made with simplicity, but also being advanced for power users, and also outputs useful information to boot.
 
-PIPupdate is open-source, cross-platform, and doesn't require installing anything. Run 1 command, and the script does it all.
+PIPupdate is open-source, cross-platform, and doesn't require installing anything. Run 1 command, and the script does it all. PIPupdate can install PIP for you, and automatically installs any required libraries for running the script (via PIP). At the same time, I've baked in some advanced functionality for advanced users.
 
 # Requirements
 * Python 3 (a Python 2 port will come after release)
@@ -32,6 +32,7 @@ PIPupdate is in it's early stages, and there's still a lot left to fix and add. 
 * PIPupdater obviously needs the force reinstall/uninstall everything arguments.
 * PIPupdater should warn users who are about to do an op with 100+ packages.
 * PIPupdater should have the equivalent of pip install -r requirements.txt, but users input packages/version numbers, then the updater compiles it into a file, and does the op on it's own.
+* PIPupdater should count the elapsed time it took to install 1 package (and output it), the entire operation (and also output it at the end), as well as possibly doing a rough ETA (in the far future...)
 * Python 2 compatibility. Right now this is Python 3 or greater only.
 
 # Have a suggestion? See a bug? Want to make additions?
