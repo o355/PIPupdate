@@ -1,21 +1,24 @@
-# PIPupdate 1.0
+# PIPupdate 1.0.1
 # (c) 2016 o355 under the GNU GPL 3.0
 
 print("Welcome to PIPupdate (v1.0)")
 print("Loading...")
-#Declaring number vars
+    
 updatecountint = 0
 updatenumber = 0
-#Try/Except for proper handling of possible import errors
+
 try:
     import sys
 except ImportError:
     raise ImportError("Please install sys to use PIPupdate!")
+
+if sys.version_info[0] < 3:
+    print("Please use Python 3.0 or greater to use PIPupdate!")
+    sys.exit()
+
 try:
     import pip
 except ImportError:
-    # We ask for an input, and determine if the user wants PIP installed.
-    # To keep things organized, we launch an external script that installs PIP for them.
     print("Shucks. PIP isn't installed. Would you like me to install PIP for you?")
     pipinstall = input("Yes or No: ").lower()
     if pipinstall == "yes":
@@ -28,11 +31,13 @@ except ImportError:
         print("I couldn't understand what you inputted.")
         print("I'll assume you didn't want to install PIP, exiting now.")
         sys.exit()
+        
 try:
     from subprocess import call
 except ImportError:
     print("Please install subprocess/subprocess call to use PIPupdate!")
     sys.exit()
+    
 try:
     from colorama import init, Fore, Style
 except ImportError:
@@ -46,22 +51,33 @@ except ImportError:
             print("Installed Colorama!")
         except ImportError:
             print("Colorama wasn't installed...")
-            print("Please try running pip install colorama in a Python terminal.")
+            print("Please try running 'pip install colorama' in a Python terminal.")
             sys.exit()
     elif coloramainstall == "no":
-        print("Alright. You can also run the pipupdate-nocolor.py script (coming 1.0.1) if you don't want to install Colorama.")
-        sys.exit()
+        print("Alright. Would you like me to run the colorless version of PIPupdate?")
+        colorlessrun = input("Yes or No: ").lower()
+        if colorlessrun == "yes":
+            print("Running the colorless version of PIPupdate!")
+            exec(open("pipupdate-nc.py").read())
+        elif colorlessrun == "no":
+            print("Not running the colorless version of PIPupdate.")
+            print("Exiting now...")
+            sys.exit()
+        else:
+            print("I couldn't understand what you inputted.")
+            print("I'll assume you didn't want to run the colorless version. Exiting now!")
+            sys.exit()
     else:
         print("I couldn't understand what you inputted.")
         print("I'll assume you didn't want to install Colorama. Exiting now!")
         sys.exit()
+        
 init()
-#Here we find out how many packages we need to install
 for pkgname in pip.get_installed_distributions():
     updatenumber = updatenumber + 1
-#Run the int -> str conversion for printing progress
+    
 updatenumberstr = str(updatenumber)
-#Run the loop, and the updater does it's thing.
+
 for pkgname in pip.get_installed_distributions():
     print(Fore.GREEN + Style.BRIGHT + "PIPupdate: Now attempting to update package " + pkgname.project_name + "..." + Style.RESET_ALL)
     updatecountint = updatecountint + 1
