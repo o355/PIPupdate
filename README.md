@@ -20,7 +20,7 @@ PIPupdate is completely open-source, and cross-platform. No need to install xarg
 It's easy. And it isn't a pain in the neck.
 
 * Download the ZIP corresponding to the latest release (usually called pipupdate-versionnumber.zip), and extract it to a folder.
-* Linux Users: You can also run the command ```https://github.com/o355/pipupdate.git --depth=1``` to download/extract PIPupdate.
+* Linux Users: You can also run the command ```https://github.com/o355/pipupdate.git --depth=1``` to download/extract PIPupdate. There are also instructions on getting the release ZIP, and extracting the ZIP in the releases tab.
 * Open a terminal prompt in that location, and type in ```python pipupdate.py```
 * You could always double-click the file on Mac OS X/Windows, if you don't feel like opening terminal prompts.
 * For Linux users, use ```python3 pipupdate.py```, to force the script to run as Python 3.
