@@ -14,8 +14,7 @@ PIPupdate is open-source, cross-platform, and doesn't require installing anythin
 * Python 3 (a Python 2 port will come after release)
 * PIP (it's in the name, folks.)
 * The subprocess, sys, and time libraries (unless you have a super custom Python install, you should already have these libraries.)
-* An internet conection
-* A supported OS (see below)
+* An internet connection
 
 # Setting up PIPupdate
 It's easy. And it isn't a pain in the neck.
