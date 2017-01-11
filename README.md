@@ -1,4 +1,4 @@
-# Welcome to PIPupdate (1.0.1)!
+# Welcome to PIPupdate (1.0.2)!
 An easy-to-use PIP package manager. Update, force reinstall, do an easy requirements.txt install, and uninstall all packages in 1 command.
 
 **Quick 2017 update: Sorry I haven't gotten around to 1.1. There's been little time to actually code PIPupdate, alongside 30 other projects (literally) I'm also maintaining.**
