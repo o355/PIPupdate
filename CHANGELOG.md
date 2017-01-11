@@ -1,6 +1,6 @@
 # PIPupdate Changelog
 
-**Latest Version: 1.0.2
+**Latest Version: 1.0.2**
 
 # Version 1.0.2 (released January 11, 2017)
 * Fixes a bug in which if a sys import failed in the install script, the program would not exit properly.
