@@ -1,14 +1,13 @@
-# PIPupdate-installPIP 1.0.1
+# PIPupdate-installPIP 1.0.2
 # External asset to PIPupdate.
 # (c) 2016 o355 under the GNU GPL 3.0
 
-print("Welcome to PIPupdate-installPIP (1.0.1)!")
+print("Welcome to PIPupdate-installPIP (1.0.2)!")
 print("Now installing PIP.")
 try:
     import sys
 except ImportError:
     raise ImportError("Please install PIP to use PIPupdate-installPIP!")
-    sys.exit()
 
 if sys.version_info[0] < 3:
     print("Please use Python 3.0 or greater to use PIPupdate-installPIP!")

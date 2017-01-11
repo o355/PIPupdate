@@ -1,7 +1,7 @@
-# PIPupdate 1.0.1
+# PIPupdate 1.0.2
 # (c) 2016 o355 under the GNU GPL 3.0
 
-print("Welcome to PIPupdate (v1.0.1)")
+print("Welcome to PIPupdate (v1.0.2)")
 print("Loading...")
     
 updatecountint = 0

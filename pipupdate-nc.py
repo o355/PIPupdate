@@ -1,8 +1,8 @@
-# PIPupdate 1.0.1-nocolor
+# PIPupdate 1.0.2-nocolor
 # Specific PIPupdate version to run 
 # (c) 2016 o355 under the GNU GPL 3.0
 
-print("Welcome to PIPupdate-nocolor (v1.0.1)!")
+print("Welcome to PIPupdate-nocolor (v1.0.2)!")
 print("Loading...")
 
 updatecountint = 0
