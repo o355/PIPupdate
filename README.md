@@ -1,7 +1,7 @@
 # Welcome to PIPupdate (1.0.2)!
 An easy-to-use PIP package manager. Update, force reinstall, do an easy requirements.txt install, and uninstall all packages in 1 command.
 
-**Quick 2017 update: Sorry I haven't gotten around to 1.1. There's been little time to actually code PIPupdate, alongside 30 other projects (literally) I'm also maintaining.**
+**Late January 2016 update: Hi fellow PIPupdate users! Mid-terms got in the way of development, along with the fact that I'm still trying to maintain lots of projects, and I have a huge backlog of things to do. I'm quickly burning through my to-do list, so I can focus on Python development (and NOT play games on the weekends). I'm active on PyTerm, and PIPupdate is next once I sweep through things I want to focus on with PyTerm.**
 
 # Why PIPupdate?
 There's a simple problem with PIP. There is no command that updates all packages in one sweep. So, to help alleviate the issue, I made PIPupdate.
