@@ -1,7 +1,6 @@
 # Welcome to PIPupdate (1.0.2)!
 An easy-to-use PIP package manager. Update, force reinstall, do an easy requirements.txt install, and uninstall all packages in 1 command.
 
-**PIPupdate's development is still on hold, as I continue to work on PyWeather. PIPupdate should start getting updates in the latter part of 2017.**
 
 # Why PIPupdate?
 There's a simple problem with PIP. There is no command that updates all packages in one sweep. So, to help alleviate the issue, I made PIPupdate.
@@ -13,7 +12,7 @@ PIPupdate can do what it says. What it can also do (in later releases) is force 
 PIPupdate is completely open-source, and cross-platform. No need to install xargs, fool with grep. PIPupdate just works, and outputs progress along the way. 
 
 # Requirements
-* Python 3 (a Python 2 port will come after release)
+* Python 3
 * PIP (it's in the name, folks.)
 * The subprocess, sys, and time libraries (unless you have a super custom Python install, you should already have these libraries.)
 * An internet connection
@@ -28,6 +27,7 @@ It's easy. And it isn't a pain in the neck.
 * For Linux users, use ```python3 pipupdate.py```, to force the script to run as Python 3.
 * The updater will do it's thing. If you have lots of packages, grab a snack, it may take a while!
 * The speed of the updater will usually depend on your internet connection, more than your computer speed.
+* Enjoy your PIP packages being up-to-date.
 
 # Have a suggestion? See a bug? Want to make additions?
 Be sure to report suggestions and bugs with issues.
