@@ -1,8 +1,8 @@
-# PIPupdate 1.0.2-nocolor
+# PIPupdate 1.1.0-nocolor
 # Specific PIPupdate version to run 
-# (c) 2016 o355 under the GNU GPL 3.0
+# (c) 2016-2017 o355 under the GNU GPL 3.0
 
-print("Welcome to PIPupdate-nocolor (v1.0.2)!")
+print("Welcome to PIPupdate-nocolor (v1.1.0)!")
 print("Loading...")
 
 updatecountint = 0
@@ -23,15 +23,18 @@ if sys.version_info[0] < 3:
 try:
     import pip
 except ImportError:
-    print("Please install PIP to use PIPupdate-nocolor!")
-    print("You can also use the pipinstall.py script to install PIP.")
-    sys.exit()
-
-try:
-    from subprocess import call
-except ImportError:
-    print("Please install subprocess/subprocess call to use PIPupdate-nocolor!")
-    sys.exit()
+    print("Shucks. PIP isn't installed. Would you like me to install PIP for you?")
+    pipinstall = input("Yes or No: ").lower()
+    if pipinstall == "yes":
+        print("Alright. Installing PIP now!")
+        exec(open("pipinstall.py").read())
+    elif pipinstall == "no":
+        print("Alright. Not installing PIP, exiting PIPupdate.")
+        sys.exit()
+    else:
+        print("I couldn't understand what you inputted.")
+        print("I'll assume you didn't want to install PIP, exiting now.")
+        sys.exit()
 
 for pkgname in pip.get_installed_distributions():
     updatenumber = updatenumber + 1
@@ -42,8 +45,11 @@ for pkgname in pip.get_installed_distributions():
     print("PIPupdate: Now attempting to update package " + pkgname.project_name + "...")
     updatecountint = updatecountint + 1
     updatecountstr = str(updatecountint)
-    call("pip install --upgrade " + pkgname.project_name, shell=True)
-    print("PIPupdate: Updated package " + pkgname.project_name + ". Progress: " + updatecountstr + "/" + updatenumberstr + " updates")
+    try:
+        pip.main(['install', '--upgrade', pkgname.project_name])
+        print("PIPupdate: Updated package " + pkgname.project_name + ". Progress: " + updatecountstr + "/" + updatenumberstr + " updates")
+    except:
+        print("PIPupdate: Failed to update package " + pkgname.project_name + ". Progress: " + updatecountstr + "/" + updatenumberstr + " updates")
 
 print("")
 print("PIPupdate is done, updated " + updatecountstr + " packages!")

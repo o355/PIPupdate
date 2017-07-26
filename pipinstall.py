@@ -1,8 +1,8 @@
-# PIPupdate-installPIP 1.0.2
+# PIPupdate-installPIP 1.1.0
 # External asset to PIPupdate.
-# (c) 2016 o355 under the GNU GPL 3.0
+# (c) 2016-2017 o355 under the GNU GPL 3.0
 
-print("Welcome to PIPupdate-installPIP (1.0.2)!")
+print("Welcome to PIPupdate-installPIP (1.1.0)!")
 print("Now installing PIP.")
 try:
     import sys
@@ -32,8 +32,15 @@ except ImportError:
     sys.exit()
     
 print("Now downloading the PIP installer...")
-with urllib.request.urlopen('https://bootstrap.pypa.io/get-pip.py') as update_response, open('get-pip.py', 'wb') as update_out_file:
-    shutil.copyfileobj(update_response, update_out_file)
+try:
+    with urllib.request.urlopen('https://bootstrap.pypa.io/get-pip.py') as update_response, open('get-pip.py', 'wb') as update_out_file:
+        shutil.copyfileobj(update_response, update_out_file)
+except:
+    print("The PIP installer could not be fetched, either due to a urllib failure, or you don't have an internet connection.",
+          "Please attempt to download the installer from this url: 'https://bootstrap.pypa.io/get-pip.py'.",
+          "Save the file in the pipupdate directory. When this process is complete, press enter to continue. Otherwise, press",
+          "Control + C to exit.", sep="\n")
+    input()
     
 print("Now running the PIP installer...")
 print("Please note: get-pip.py is not developed or maintained by myself.")

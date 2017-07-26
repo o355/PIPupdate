@@ -1,7 +1,7 @@
-# PIPupdate 1.0.2
-# (c) 2016 o355 under the GNU GPL 3.0
+# PIPupdate 1.1.0
+# (c) 2016-2017 o355 under the GNU GPL 3.0
 
-print("Welcome to PIPupdate (v1.0.2)")
+print("Welcome to PIPupdate (v1.1.0)!")
 print("Loading...")
     
 updatecountint = 0
@@ -31,12 +31,7 @@ except ImportError:
         print("I couldn't understand what you inputted.")
         print("I'll assume you didn't want to install PIP, exiting now.")
         sys.exit()
-        
-try:
-    from subprocess import call
-except ImportError:
-    print("Please install subprocess/subprocess call to use PIPupdate!")
-    sys.exit()
+
     
 try:
     from colorama import init, Fore, Style
@@ -82,8 +77,11 @@ for pkgname in pip.get_installed_distributions():
     print(Fore.GREEN + Style.BRIGHT + "PIPupdate: Now attempting to update package " + pkgname.project_name + "..." + Style.RESET_ALL)
     updatecountint = updatecountint + 1
     updatecountstr = str(updatecountint)
-    call("pip install --upgrade " + pkgname.project_name, shell=True)
-    print(Fore.GREEN + Style.BRIGHT + "PIPupdate: Updated package " + pkgname.project_name + ". Progress: " + updatecountstr + "/" + updatenumberstr + " updates")
+    try:
+        pip.main(['install', '--upgrade', pkgname.project_name])
+        print(Fore.GREEN + Style.BRIGHT + "PIPupdate: Updated package " + pkgname.project_name + ". Progress: " + updatecountstr + "/" + updatenumberstr + " updates")
+    except:
+        print(Fore.RED + Style.BRIGHT + "PIPupdate: Failed to update package" + pkgname.project_name + ". Progress: " + updatecountstr + "/" + updatenumberstr + " updates")
 
 print(Style.RESET_ALL)
 print("PIPupdate is done, updated " + updatecountstr + " packages!")

@@ -88,3 +88,10 @@ ENV/
 # Rope project settings
 .ropeproject
 .project
+
+# PyCharm stuff
+.idea/workspace.xml
+.idea/pipupdate.iml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/misc.xml
