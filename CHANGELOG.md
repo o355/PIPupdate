@@ -1,6 +1,13 @@
 # PIPupdate Changelog
 
-**Latest Version: 1.0.2**
+**Latest Version: 1.1.0**
+
+# Version 1.1.0 (released July 26, 2017)
+* Added a catch when an update fails
+* No longer requires subprocess (using pip.main to execute update commands)
+* PIPinstall can catch a failed download, and allows the user to manually download the file instead.
+* Minor UI changes
+* Updated copyright
 
 # Version 1.0.2 (released January 11, 2017)
 * Fixes a bug in which if a sys import failed in the install script, the program would not exit properly.
