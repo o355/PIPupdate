@@ -1,4 +1,4 @@
-Please visit https://gitlab.com/o355/BetterNetdataNotifs for the active repository and code.
+Please visit https://gitlab.com/o355/PIPupdate for the active repository and code.
 
 ## Why did you move to GitLab?
 I do not want to support GitHub after Microsoft acquired GitHub. I do not support publishing my work on a website owned by an extremely anti-user, pro-proprietary and pro-surveillance company.
